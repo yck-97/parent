@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://120.46.47.254:5432/test123456
+    username: testuser
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+  redis:
+    host: 120.46.47.254
+    port: 6379
+  application:
+    name: user_service
+
+mybatis:
+  type-aliases-package: com.yck.user.dto
+  mapper-locations: classpath:mapper/*.xml
+
+#mybatis-plus:
+#  mapper-locations: mapping/*.xml
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    map-underscore-to-camel-case: true
+#  type-aliases-package: com.yck.user.dto

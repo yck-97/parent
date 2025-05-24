@@ -1,0 +1,41 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/crm?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    # ????????????0
+    database: 5
+    # ??????
+    timeout: 1800000
+    # ????
+    #password: "123456"
+    lettuce:
+      pool:
+        # ?????????????????
+        max-wait: -1
+        # ???????????
+        max-idle: 5
+        # ???????????
+        min-idle: 0
+        # ??????????????????
+        max-active: 20
+  application:
+    name: product_service
+
+mybatis:
+  type-aliases-package: com.yck.product.dto
+  mapper-locations: classpath:mapper/*.xml
+
+#mybatis-plus:
+#  mapper-locations: mapping/*.xml
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    map-underscore-to-camel-case: true
+#  type-aliases-package: com.yck.user.dto
